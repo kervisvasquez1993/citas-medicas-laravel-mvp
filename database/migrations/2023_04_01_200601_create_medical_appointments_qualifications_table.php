@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('wallets', function (Blueprint $table) {
+        Schema::create('medical_appointments_qualifications', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('patient_id')->references('id')->on('patients')->onDelete('cascade');
-            $table->integer('balance')->default(0);
+            $table->foreignId('m_appointment_id')->references('id')->on('medical_appointments')->onDelete('cascade');
+            $table->integer('qualification')->default(0)->max(5)->min(0);
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('wallets');
+        Schema::dropIfExists('medical_appointments_qualifications');
     }
 };

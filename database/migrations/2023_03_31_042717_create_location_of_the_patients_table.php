@@ -12,8 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('location_of_the_patients', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->foreignId('patient_id')->references('id')->on('patients')->onDelete('cascade');
+            $table->string("gps_coordinates");
+            $table->string("address");
+            $table->string("LandmarkOfALocation")->nullable();
+            $table->integer("priority")->default(0);
         });
     }
 

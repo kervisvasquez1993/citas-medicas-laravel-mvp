@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('medical_service_cost_id')->references('id')->on('medical_service_costs')->onDelete('cascade');
             $table->date('date-of-appointment');
             $table->time('hour-of-appointment');
-            $table->interget('cots');
+            $table->integer('cots');
             $table->boolean('is_paidp')->default(false);
             $table->boolean('attended')->default(false);
             $table->timestamps();

@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('top_up_wallets', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('wallet_id')->references('id')->on('wallets')->onDelete('cascade');
+            $table->integer('amount-to-recharge')->default(0);
+            $table->string("referencia");
+            $table->enum("status", ["pending", "approved", "rejected"])->default("pending");
+            $table->enum("payment_method", ["pago_movil", "efectivo", "transfer"])->default("pago_movil");
             $table->timestamps();
         });
     }
