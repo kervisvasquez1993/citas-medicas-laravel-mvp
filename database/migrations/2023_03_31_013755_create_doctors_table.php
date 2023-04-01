@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->boolean('disponible')->default(false);
+            $table->boolean('verificado_certificados')->default(false);
             $table->timestamps();
         });
     }

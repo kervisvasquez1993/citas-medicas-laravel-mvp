@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('extra_service_provider_by_the_doctors', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('description');
+            $table->integer('cost');
+            $table->foreignId('doctor_id')->references('id')->on('doctors')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
