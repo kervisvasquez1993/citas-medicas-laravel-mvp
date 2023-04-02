@@ -15,4 +15,18 @@ class MedicalServiceCost extends Model
         'specialty_id',
         'cost',
     ];
+    public function getMedicalService()
+    {
+        return $this->belongsTo(MedicalService::class, 'medical_service_id');
+    }
+
+    public function getSpecialty()
+    {
+        return $this->belongsTo(Specialty::class, 'specialty_id');
+    }
+
+    public function getTypeOfMedicalAppointment()
+    {
+        return $this->belongsTo(TypeOfMedicalAppointment::class, 'type_of_medical_appointment_id');
+    }
 }

@@ -1,19 +1,8 @@
-<?php
+¡Claro! Aquí te presento todas las relaciones que puede tener el modelo Doctor en Laravel, basado en los campos proporcionados:
 
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
-class Doctor extends Model
-{
-    use HasFactory;
-    protected $table = "doctors";
-    protected $fillable = [
-        'user_id',
-        'disponible',
-        'verificado_certificados',
-    ];
+```php
+class Doctor extends Model {
+    protected $fillable = ['user_id', 'disponible', 'verificado_certificados'];
 
     public function user() {
         return $this->belongsTo(User::class);
@@ -54,5 +43,7 @@ class Doctor extends Model
     public function locations() {
         return $this->hasMany(LocationOfTheDoctor::class);
     }
-
 }
+```
+
+Ten en cuenta que se han incluido todas las relaciones posibles, según los campos proporcionados en los modelos relacionados. Por favor, asegúrate de verificar que estas relaciones son correctas para tu caso específico y ajustarlas según sea necesario. Si necesitas más información o tienes alguna otra pregunta, no dudes en preguntar.
