@@ -29,24 +29,28 @@ class MedicalAppointment extends Model
         return $this->belongsTo(MedicalServiceCost::class);
     }
 
-    // TODO: VER DESPUES ESTA RELACION
-    public function location()
-    {
-        return $this->belongsTo(LocationOfThePatient::class, 'location_id');
-    }
-
-    public function qualifications()
+    public function medicalAppointmentsQualifications()
     {
         return $this->hasMany(MedicalAppointmentsQualification::class);
     }
 
-    public function reports()
+    public function medicalAppointmentsReports()
     {
         return $this->hasMany(MedicalAppointmentsReport::class);
     }
 
-    public function treatments()
+    public function medicalAppointmentsTreatments()
     {
         return $this->hasMany(MedicalAppointmentsTreatment::class);
+    }
+
+    public function extraServiceMedicalAppointments()
+    {
+        return $this->hasMany(ExtraServiceMedicalAppointment::class);
+    }
+
+    public function doctor()
+    {
+        return $this->hasOne(Doctor::class, 'user_id', 'doctor_id');
     }
 }
