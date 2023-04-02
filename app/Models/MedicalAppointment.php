@@ -16,6 +16,37 @@ class MedicalAppointment extends Model
         'hour-of-appointment',
         'cots',
         'is_paidp',
-        'attended'
+        'attended',
     ];
+
+    public function patient()
+    {
+        return $this->belongsTo(Patient::class);
+    }
+
+    public function medicalServiceCost()
+    {
+        return $this->belongsTo(MedicalServiceCost::class);
+    }
+
+    // TODO: VER DESPUES ESTA RELACION
+    public function location()
+    {
+        return $this->belongsTo(LocationOfThePatient::class, 'location_id');
+    }
+
+    public function qualifications()
+    {
+        return $this->hasMany(MedicalAppointmentsQualification::class);
+    }
+
+    public function reports()
+    {
+        return $this->hasMany(MedicalAppointmentsReport::class);
+    }
+
+    public function treatments()
+    {
+        return $this->hasMany(MedicalAppointmentsTreatment::class);
+    }
 }

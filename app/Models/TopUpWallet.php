@@ -16,4 +16,9 @@ class TopUpWallet extends Model
         'status',
         'payment_method',
     ];
+
+    public function wallet()
+    {
+        return $this->belongsTo(Wallet::class);
+    }
 }

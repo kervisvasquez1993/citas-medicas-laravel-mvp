@@ -13,4 +13,9 @@ class MedicalAppointmentsQualification extends Model
         'medical_appointment_id',
         'qualification',
     ];
+
+    public function medicalAppointment()
+    {
+        return $this->belongsTo(MedicalAppointment::class);
+    }
 }

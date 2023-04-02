@@ -13,4 +13,11 @@ class Specialty extends Model
         'name',
         'description',
     ];
+    public function medicalServiceCosts() {
+        return $this->hasMany(MedicalServiceCost::class);
+    }
+
+    public function doctors() {
+        return $this->belongsToMany(Doctor::class);
+    }
 }

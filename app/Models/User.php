@@ -47,10 +47,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getDoctor(){
-        return $this->hasMany(Doctor::className());
+    
+    public function doctor() {
+        return $this->hasOne(Doctor::class);
     }
-    public function getPatient(){
-        return $this->hasMany(Patient::className());
+
+    public function patient() {
+        return $this->hasOne(Patient::class);
+    }
+
+    public function wallets() {
+        return $this->hasMany(Wallet::class);
     }
 }

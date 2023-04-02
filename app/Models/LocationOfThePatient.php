@@ -19,4 +19,14 @@ class LocationOfThePatient extends Model
         'LandmarkOfALocation',
         'priority',
     ];
+
+    public function patient()
+    {
+        return $this->belongsTo(Patient::class);
+    }
+
+    public function medicalAppointments()
+    {
+        return $this->hasMany(MedicalAppointment::class, 'id', 'location_id');
+    }
 }

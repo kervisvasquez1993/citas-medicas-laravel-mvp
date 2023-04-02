@@ -13,4 +13,16 @@ class Wallet extends Model
         'user_id',
         'balance',
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function topUpWallets() {
+        return $this->hasMany(TopUpWallet::class);
+    }
+
+    public function medicalServiceCosts() {
+        return $this->belongsToMany(MedicalServiceCost::class);
+    }
 }

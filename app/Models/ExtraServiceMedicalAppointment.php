@@ -15,4 +15,25 @@ class ExtraServiceMedicalAppointment extends Model
         'descripcion',
         'validate_patient'
     ];
+
+
+    public function medicalAppointment() {
+        return $this->belongsTo(MedicalAppointment::class);
+    }
+
+    public function extraServiceProvider() {
+        return $this->belongsTo(ExtraServiceProviderByTheDoctor::class);
+    }
+
+    public function doctors() {
+        return $this->belongsToMany(Doctor::class, 'extra_service_provider_by_the_doctors', 'extra_service_id', 'doctor_id');
+    }
+
+    public function patients() {
+        return $this->belongsToMany(Patient::class, 'medical_appointments', 'id', 'patient_id');
+    }
+
+    public function medicalServiceCost() {
+        return $this->hasOne(MedicalServiceCost::class, 'id', 'medical_service_cost_id');
+    }
 }

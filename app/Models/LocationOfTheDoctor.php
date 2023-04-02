@@ -18,6 +18,20 @@ class LocationOfTheDoctor extends Model
         'longitude',
         'LandmarkOfALocation',
         'priority',
-
     ];
+
+    public function doctor()
+    {
+        return $this->belongsTo(Doctor::class);
+    }
+
+    public function extraServiceProviderByTheDoctor()
+    {
+        return $this->belongsTo(ExtraServiceProviderByTheDoctor::class, 'doctor_id');
+    }
+
+    public function medicalAppointments()
+    {
+        return $this->hasMany(MedicalAppointment::class, 'id', 'location_id');
+    }
 }
