@@ -15,7 +15,6 @@ return new class extends Migration
             $table->foreignId('patient_id')->references('id')->on('patients')->onDelete('cascade');
             $table->string("city");
             $table->string("state");
-            $table->string("city");
             $table->string("address");
             $table->string("latitude");
             $table->string("longitude");

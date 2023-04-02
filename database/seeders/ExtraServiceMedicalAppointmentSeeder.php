@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-
+use App\Models\ExtraServiceMedicalAppointment;
 use Illuminate\Database\Seeder;
 
 class ExtraServiceMedicalAppointmentSeeder extends Seeder
