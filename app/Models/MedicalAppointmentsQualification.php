@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class MedicalAppointmentsQualification extends Model
 {
     use HasFactory;
+    protected $table = 'medical_appointments_qualifications';
+    protected $fillable = [
+        'medical_appointment_id',
+        'qualification',
+    ];
 }

@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class TopUpWallet extends Model
 {
     use HasFactory;
+    protected $table = "top_up_wallets";
+    protected $fillable = [
+        'wallet_id',
+        'amount-to-recharge',
+        'referencia',
+        'status',
+        'payment_method',
+    ];
 }

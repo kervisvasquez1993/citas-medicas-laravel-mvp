@@ -13,12 +13,10 @@ return new class extends Migration
     {
         Schema::create('extra_service_medical_appointments', function (Blueprint $table) {
             $table->id();
-            // $table->foreignId('medical_appointment_id')->references('id')->on('medical_appointments')->onDelete('cascade');
             $table->foreignId('medical_appointment')->references('id')->on('medical_appointments')->onDelete('cascade');
+            $table->foreignId('extra_service')->references('id')->on('extra_service_provider_by_the_doctors')->onDelete('cascade');
             $table->string("descripcion");
             $table->boolean('validate_patient')->default(false);
-            /* Creating a foreign key. */
-            $table->foreignId('extra_service')->references('id')->on('extra_service_provider_by_the_doctors')->onDelete('cascade');
             $table->timestamps();
         });
     }

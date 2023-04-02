@@ -13,8 +13,12 @@ return new class extends Migration
     {
         Schema::create('location_of_the_patients', function (Blueprint $table) {
             $table->foreignId('patient_id')->references('id')->on('patients')->onDelete('cascade');
-            $table->string("gps_coordinates");
+            $table->string("city");
+            $table->string("state");
+            $table->string("city");
             $table->string("address");
+            $table->string("latitude");
+            $table->string("longitude");
             $table->string("LandmarkOfALocation")->nullable();
             $table->integer("priority")->default(0);
         });
