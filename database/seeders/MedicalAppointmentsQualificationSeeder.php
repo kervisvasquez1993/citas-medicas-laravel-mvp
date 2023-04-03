@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\MedicalAppointmentsQualification;
 
 class MedicalAppointmentsQualificationSeeder extends Seeder
 {
@@ -13,7 +14,7 @@ class MedicalAppointmentsQualificationSeeder extends Seeder
     public function run(): void
     {
         MedicalAppointmentsQualification::create([
-            'medical_appointment_id' => 1,
+            'm_appointment_id' => 1,
             'qualification' => 5
         ]);
     }

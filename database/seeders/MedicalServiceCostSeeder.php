@@ -15,9 +15,9 @@ class MedicalServiceCostSeeder extends Seeder
     {
         MedicalServiceCost::create([
             'type_of_medical_appointment_id' => 1,
-            'medical_service_id' => 1,
+            'doctor_id' => 1,
             'specialty_id' => 1,
-            'cost' => 80000
+            'cost' => 8000
         ]);
     }
 }

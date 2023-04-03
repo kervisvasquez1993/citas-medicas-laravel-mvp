@@ -11,7 +11,7 @@ class MedicalServiceCost extends Model
     protected $table = "medical_service_costs";
     protected $fillable = [
         'type_of_medical_appointment_id',
-        'medical_service_id',
+        'doctor_id',
         'specialty_id',
         'cost',
     ];

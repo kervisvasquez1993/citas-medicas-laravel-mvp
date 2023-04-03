@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('medical_appointment_id')->references('id')->on('medical_appointments')->onDelete('cascade');
             $table->string("description");
+            $table->timestamps();
         });
     }
 

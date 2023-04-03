@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('date-of-appointment');
             $table->time('hour-of-appointment');
             $table->integer('cots');
-            $table->boolean('is_paidp')->default(false);
+            $table->boolean('is_paid')->default(false);
             $table->boolean('attended')->default(false);
             $table->timestamps();
         });

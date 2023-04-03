@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('medical_service_costs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('type_of_medical_appointment_id')->constrained();
+            $table->foreignId('type_of_medical_appointment_id')->references('id')->on('type_of_medical_appointments')->onDelete('cascade');
             $table->foreignId('doctor_id')->references('id')->on('doctors')->onDelete('cascade');
             $table->foreignId('specialty_id')->references('id')->on('specialties')->onDelete('cascade');
             $table->integer('cost');

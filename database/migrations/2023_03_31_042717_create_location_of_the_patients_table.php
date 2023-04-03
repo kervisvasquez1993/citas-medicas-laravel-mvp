@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string("longitude");
             $table->string("LandmarkOfALocation")->nullable();
             $table->integer("priority")->default(0);
+            $table->timestamps();
         });
     }
 

@@ -12,8 +12,8 @@ class ExtraServiceMedicalAppointmentSeeder extends Seeder
     public function run(): void
     {
         ExtraServiceMedicalAppointment::create([
-            'medical_appointment' => 'Consulta de seguimiento',
-            'extra_service' => 'Estudio de laboratorio',
+            'medical_appointment' => 1,
+            'extra_service' => 1,
             'descripcion' => 'Análisis de sangre completo',
             'validate_patient' => true
         ]);

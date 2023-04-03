@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Specialty;
 
-class SpecialtySeeder extends Seeder
+class SpecialitySeeder extends Seeder
 {
     /**
      * Run the database seeds.

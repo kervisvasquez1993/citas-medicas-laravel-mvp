@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\LocationOfThePatient;
 
-class LocationOfThePatient extends Seeder
+class LocationOfThePatientSeeder extends Seeder
 {
     /**
      * Run the database seeds.
